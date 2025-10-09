@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Intro</title>
+    <script>
+        //Internal JS
+        function clickMe() {
+            console.log("Button Clicked!!")
+        }
+        function changeHeaderBgColor(){
+            let bgColor = prompt("Enter the Bg Color");
+            document.body.getElementsByTagName("h1")[0].style.backgroundColor = bgColor;
+        }
+        function changePara(){
+            let para = prompt("Enter the new Content for Para");
+            document.body.getElementsByTagName("p")[0].innerText = para;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to JS World</h1>
+    <p>This is a demo Paragraph</p>
+    <button onclick="clickMe()">Click me</button>
+    <button onclick="changeHeaderBgColor()">Change Header Background Color</button>
+    <button onclick="changePara()">Change Para Content</button>
+</body>
+</html>
