@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script>
+        let x = 0;
+        function addOne(){
+            x++;
+            let displayInfo = `Your Bag has ${x} Items`;
+            document.body.getElementsByTagName('h1')[0].innerText = displayInfo;
+        }
+        function addTwo(){
+            x += 2;
+            let displayInfo = `Your Bag has ${x} Items`;
+            document.body.getElementsByTagName('h1')[0].innerText = displayInfo;
+        }
+        function minusOne(){
+            x--;
+            let displayInfo = `Your Bag has ${x} Items`;
+            document.body.getElementsByTagName('h1')[0].innerText = displayInfo;
+        }
+    </script>
+</head>
+<body>
+    <button class="add-buttons add1" onclick="addOne()">Add to Bag</button>
+    <Button class="minus-button" onclick="minusOne()">Move to Wishlist</Button>
+    <Button class="add-buttons add2" onclick="addTwo()">Add 1 + 1 Sale Item</Button>
+    <h1 id="display-info"></h1>
+</body>
+</html>
