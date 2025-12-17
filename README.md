@@ -541,8 +541,8 @@ This project is open source and available for educational purposes.
 ---
 
 **📊 Stats:**
-![Code Size](https://img.shields.io/github/languages/code-size/yourusername/Learning-Js?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/yourusername/Learning-Js?style=flat-square)
-![Files](https://img.shields.io/github/directory-file-count/yourusername/Learning-Js?style=flat-square)
+![Code Size](https://img.shields.io/github/languages/code-size/UsaaryanByte07/Learning-Js?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/UsaaryanByte07/Learning-Js?style=flat-square)
+![Files](https://img.shields.io/github/directory-file-count/UsaaryanByte07/Learning-Js?style=flat-square)
 
 </div>
