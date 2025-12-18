@@ -412,7 +412,7 @@ graph LR
     C[Objects] --> D[Stored by Reference]
     
     B --> E[let a = 10<br/>let b = a<br/>Independent Copies]
-    D --> F[let x = {val: 10}<br/>let y = x<br/>Share Reference]
+    D --> F[let x = obj<br/>let y = x<br/>Share Reference]
     
     style A fill:#B4E5FF
     style B fill:#B4FFB4
