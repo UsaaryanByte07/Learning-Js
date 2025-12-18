@@ -10,7 +10,7 @@
 
 *A comprehensive repository dedicated to mastering JavaScript from fundamentals to advanced concepts*
 
-[🚀 Getting Started](#-getting-started) • [📖 Chapters](#-chapters-overview) • [🎯 Projects](#-practice-projects) • [📊 Progress](#-learning-progress)
+[🚀 Getting Started](#-getting-started) • [📖 Chapters](#-chapters-overview) • [🎯 Questions](#-practice-questions) • [📊 Progress](#-learning-progress)
 
 </div>
 
@@ -21,7 +21,7 @@
 - [Overview](#-overview)
 - [Learning Path](#-learning-path)
 - [Chapters Overview](#-chapters-overview)
-- [Practice Projects](#-practice-projects)
+- [Practice Questions](#-practice-questions)
 - [Key Concepts Covered](#-key-concepts-covered)
 - [Getting Started](#-getting-started)
 - [Learning Progress](#-learning-progress)
@@ -52,7 +52,9 @@ graph LR
     D --> E[Decision Control]
     E --> F[Functions]
     F --> G[Loops]
-    G --> H[Practice Projects]
+    G --> H[Type Coercion & Memory]
+    H --> I[Objects]
+    I --> J[Practice Questions]
     
     style A fill:#FFE5B4
     style B fill:#FFE5B4
@@ -61,7 +63,9 @@ graph LR
     style E fill:#D4FFB4
     style F fill:#D4FFB4
     style G fill:#FFB4D4
-    style H fill:#E5B4FF
+    style H fill:#B4E5FF
+    style I fill:#FFE5B4
+    style J fill:#E5B4FF
 ```
 
 ---
@@ -276,9 +280,153 @@ graph TD
 
 ---
 
-## 🎯 Practice Projects
+### 📕 Chapter 7: Type Coercion and Memory Management
+**Files:** [`script.js`](Chapter%207(Type_Coercion_and_Memory_Management)/script.js) | [`recursion.js`](Chapter%207(Type_Coercion_and_Memory_Management)/recursion.js)
 
-### 🛍️ Project 1: Myntra Shopping Bag Counter
+🧠 **Advanced Concepts:**
+- 🔄 Type coercion in JavaScript
+- 📊 Implicit vs explicit type conversion
+- 🔁 Recursion fundamentals
+- 🎯 Base case and recursive case
+- ⚡ Call stack visualization
+- 🧮 Factorial calculation (iterative vs recursive)
+
+**Type Coercion Examples:**
+```javascript
+console.log('Hi' + 44);    // 'Hi44' - String concatenation
+console.log('66' - 44);    // 22 - Numeric subtraction
+console.log(true == 2);    // false - Type coercion
+```
+
+**Recursion Example:**
+```javascript
+function getFactorial(num) {
+  if (num === 1 || num === 0) return 1;  // Base case
+  return num * getFactorial(num - 1);     // Recursive case
+}
+
+getFactorial(5);  // 120
+```
+
+**Recursion Call Stack:**
+```mermaid
+graph TB
+    A[getFactorial 5] --> B[5 * getFactorial 4]
+    B --> C[4 * getFactorial 3]
+    C --> D[3 * getFactorial 2]
+    D --> E[2 * getFactorial 1]
+    E --> F[Return 1]
+    F --> G[Return 2]
+    G --> H[Return 6]
+    H --> I[Return 24]
+    I --> J[Return 120]
+    
+    style A fill:#FFE5B4
+    style B fill:#FFD4B4
+    style C fill:#B4FFE5
+    style D fill:#D4B4FF
+    style E fill:#FFB4D4
+    style F fill:#B4FFB4
+    style G fill:#E5FFB4
+    style H fill:#FFE5D4
+    style I fill:#D4E5FF
+    style J fill:#B4D4FF
+```
+
+---
+
+### 📘 Chapter 8: Objects
+**Files:** 4 comprehensive object-oriented files
+
+<details>
+<summary>📂 Click to expand all Object topics</summary>
+
+#### 1️⃣ [`object.js`](Chapter%208(Objects)/object.js)
+- Object creation and structure
+- Property access (dot vs bracket notation)
+- Nested objects
+- Adding/modifying/deleting properties
+- Object as key-value pairs
+
+#### 2️⃣ [`method.js`](Chapter%208(Objects)/method.js)
+- Methods in objects
+- `this` keyword usage
+- Encapsulating functionality
+- Object-oriented calculations
+
+#### 3️⃣ [`reference.js`](Chapter%208(Objects)/reference.js)
+- Call by value vs call by reference
+- Object reference behavior
+- Comparing objects
+- Memory management
+
+#### 4️⃣ [`reference_in_function.js`](Chapter%208(Objects)/reference_in_function.js)
+- Passing objects to functions
+- Object mutation in functions
+- String objects and methods
+- Immutability concepts
+
+</details>
+
+**Object Concepts:**
+```javascript
+// Object creation
+let product = {
+  company: 'Nike',
+  'item-name': 'Running Shoes',
+  price: 2500,
+  rating: {
+    fiveStar: 10,
+    fourStar: 5
+  }
+};
+
+// Property access
+product.company;           // Dot notation
+product['item-name'];      // Bracket notation
+product.rating.fiveStar;   // Nested access
+
+// Modifying objects
+product.discount = 50;     // Add property
+product.price = 2450;      // Modify property
+delete product.discount;   // Delete property
+```
+
+**Object Methods:**
+```javascript
+let rating = {
+  fiveStar: 10,
+  fourStar: 5,
+  showRating: function() {
+    console.log('Total:', this.fiveStar + this.fourStar);
+  }
+};
+
+rating.showRating();  // Method call
+```
+
+**Memory Reference Model:**
+```mermaid
+graph LR
+    A[Primitive Types] --> B[Stored by Value]
+    C[Objects] --> D[Stored by Reference]
+    
+    B --> E[let a = 10<br/>let b = a<br/>Independent Copies]
+    D --> F[let x = {val: 10}<br/>let y = x<br/>Share Reference]
+    
+    style A fill:#B4E5FF
+    style B fill:#B4FFB4
+    style C fill:#FFE5B4
+    style D fill:#FFB4D4
+    style E fill:#E5FFB4
+    style F fill:#FFD4B4
+```
+
+---
+
+## 🎯 Practice Questions
+
+### 🛍️ Question 1: Myntra Shopping Bag Counter
 **Location:** [`Practice Question 1/`](Practice%20Question%201/)
 
 <div align="center">
@@ -352,6 +500,8 @@ function addOne() {
 - ✅ Scope & Hoisting
 - ✅ Type coercion
 - ✅ Template literals
+- ✅ Recursion
+- ✅ Call Stack
 
 </td>
 <td width="50%">
@@ -361,7 +511,9 @@ function addOne() {
 - ✅ Ternary operators
 - ✅ Nullish coalescing (`??`)
 - ✅ Template strings
-- ✅ Arrow functions (coming soon)
+- ✅ Objects & Methods
+- ✅ `this` keyword
+- ✅ Reference types
 
 </td>
 </tr>
@@ -406,8 +558,8 @@ cd "Chapter 1(JS Setup and First Code)"
 
 ```mermaid
 pie title Learning Progress
-    "Completed" : 70
-    "In Progress" : 20
+    "Completed" : 75
+    "In Progress" : 15
     "Upcoming" : 10
 ```
 
@@ -419,11 +571,13 @@ pie title Learning Progress
 - [x] Chapter 4: Decision Control
 - [x] Chapter 5: Functions
 - [x] Chapter 6: Loops (While Loop)
+- [x] Chapter 7: Type Coercion and Memory Management
+- [x] Chapter 8: Objects
 
 ### 🔄 In Progress
-- [ ] Chapter 6: Advanced Loops (for, do-while, for...of, for...in)
+- [ ] Advanced Loops (for, do-while, for...of, for...in)
 - [ ] Arrays and Array Methods
-- [ ] Objects and Object-Oriented Programming
+- [ ] Advanced Object Concepts
 
 ### 📅 Upcoming Topics
 - [ ] ES6+ Features (Arrow Functions, Destructuring, Spread/Rest)
@@ -480,6 +634,20 @@ Learning-Js/
 │   ├── index.html
 │   └── scripts/
 │       └── loop.js
+│
+├── 📁 Chapter 7 (Type_Coercion_and_Memory_Management)/
+│   ├── index.html
+│   ├── script.js
+│   ├── recursion.js
+│   └── Type_coercion_and_Memory_Management.pdf
+│
+├── 📁 Chapter 8 (Objects)/
+│   ├── index.html
+│   ├── object.js
+│   ├── method.js
+│   ├── reference.js
+│   ├── reference_in_function.js
+│   └── Objects.pdf
 │
 └── 📁 Practice Question 1/
     ├── index.html
