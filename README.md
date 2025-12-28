@@ -424,6 +424,376 @@ graph LR
 
 ---
 
+### 📘 Chapter 9: Arrays
+**Files:** [`array.js`](Chapter%209(Arrays)/array.js) | [`array_methods.js`](Chapter%209(Arrays)/array_methods.js)
+
+🔢 **Array Fundamentals:**
+- Array creation and initialization
+- Accessing array elements using index
+- Array length property
+- Iterating through arrays with while loops
+- Array methods:
+  - `Array.isArray()` - Check if value is an array
+  - `push()` / `pop()` - Add/remove from end
+  - `sort()` - Sort array elements
+  - `forEach()` - Iterate over each element
+  - `map()` - Transform array elements
+  - `filter()` - Filter array based on condition
+
+**Array Methods Example:**
+```javascript
+let arr = [1, 12, 45, 11, 9, 8, 0];
+arr.push(15);           // Add to end
+arr.pop();              // Remove from end
+arr.sort();             // Sort array
+
+// Higher-order methods
+let squares = arr.map(item => item * item);
+let evens = arr.filter(item => item % 2 === 0);
+```
+
+---
+
+### 📗 Chapter 10: JSON and Local Storage
+**Files:** [`JSON.js`](Chapter%2010(JSON%20and%20Local%20Storage)/scripts/JSON.js) | [`local_storage.js`](Chapter%2010(JSON%20and%20Local%20Storage)/scripts/local_storage.js)
+
+💾 **Data Storage Concepts:**
+- **JSON (JavaScript Object Notation):**
+  - `JSON.stringify()` - Convert object to JSON string
+  - `JSON.parse()` - Convert JSON string to object
+  - Data serialization and deserialization
+
+- **Local Storage API:**
+  - `localStorage.setItem()` - Store data
+  - `localStorage.getItem()` - Retrieve data
+  - `localStorage.removeItem()` - Delete specific item
+  - `localStorage.clear()` - Clear all storage
+  - Persistent browser storage
+  - Data persistence across sessions
+
+**Code Example:**
+```javascript
+let person = { Name: "Ramesh", Age: 23 };
+let jsonString = JSON.stringify(person);
+localStorage.setItem("user", jsonString);
+
+let retrieved = localStorage.getItem("user");
+let personObj = JSON.parse(retrieved);
+```
+
+---
+
+### 📙 Chapter 11: DOM Manipulation, Date Object, and Object Comparison
+**Files:** [`DOM_Manipulation.js`](Chapter%2011(DOM%20Manipulation,%20Date%20Object,%20and%20Object%20Comparison)/scripts/DOM_Manipulation.js) | [`Date.js`](Chapter%2011(DOM%20Manipulation,%20Date%20Object,%20and%20Object%20Comparison)/scripts/Date.js) | [`Object_Comparison.js`](Chapter%2011(DOM%20Manipulation,%20Date%20Object,%20and%20Object%20Comparison)/scripts/Object_Comparison.js)
+
+🎨 **DOM Manipulation:**
+- `getElementById()` - Get element by ID
+- `querySelector()` - CSS selector-based selection
+- `document.location` & `document.domain` - Page information
+- `document.title` - Browser tab title
+- `innerText` - Change text content
+- `innerHTML` - Change HTML content
+- `classList.add()` / `classList.remove()` - CSS class manipulation
+- Dynamic styling with `element.style`
+
+📅 **Date Object:**
+- Creating dates: `new Date()`
+- Date getters: `getFullYear()`, `getMonth()`, `getDate()`, `getDay()`
+- Date setters: `setFullYear()`, `setMonth()`, `setDate()`
+- Timestamps: `Date.now()`, `getTime()`
+- Formatting: `toISOString()`, `toLocaleDateString()`
+- Date arithmetic (adding/subtracting days)
+
+🔍 **Object Comparison:**
+- `jsonEqual()` - Fast string-based comparison
+- `shallowEqual()` - Top-level property comparison
+- `deepEqual()` - Recursive deep comparison
+- Understanding reference vs value equality
+
+---
+
+### 📕 Chapter 12: Object Copy, Destructuring, Spread & Rest Operator
+**Files:** [`Object_Copy.js`](Chapter%2012(Object%20Copy,%20Destructuring,%20Spread%20Rest%20Operator)/scripts/Object_Copy.js) | [`Destructuring_Objects.js`](Chapter%2012(Object%20Copy,%20Destructuring,%20Spread%20Rest%20Operator)/scripts/Destructuring_Objects.js) | [`spread.js`](Chapter%2012(Object%20Copy,%20Destructuring,%20Spread%20Rest%20Operator)/scripts/spread.js) | [`rest.js`](Chapter%2012(Object%20Copy,%20Destructuring,%20Spread%20Rest%20Operator)/scripts/rest.js)
+
+📋 **Modern JavaScript Features:**
+
+**Object Copying:**
+- Shallow copy vs Deep copy
+- `JSON.parse(JSON.stringify())` method
+- Recursive deep copy implementation
+- Avoiding reference issues
+
+**Destructuring:**
+```javascript
+let {firstName, surname} = student;
+let [first, second, ...rest] = array;
+```
+- Object destructuring
+- Array destructuring
+- Property shorthand
+- Method shorthand
+
+**Spread Operator (...):**
+```javascript
+let newArray = [...oldArray, newItem];
+let newObj = {...oldObj, newProp: value};
+```
+- Array spreading
+- Object spreading
+- Creating copies
+- Merging arrays/objects
+
+**Rest Operator (...):**
+```javascript
+let [first, second, ...remaining] = array;
+```
+- Collecting remaining elements
+- Function rest parameters
+
+---
+
+### 📘 Chapter 13: Arrow Functions, Higher Order Functions, SetTimeout and SetInterval
+**Files:** [`arrow.js`](Chapter%2013(Arrow%20functions,%20Higher%20Order%20Function,%20SetTimeout%20and%20SetInterval)/scripts/arrow.js) | [`higher_order_functions.js`](Chapter%2013(Arrow%20functions,%20Higher%20Order%20Function,%20SetTimeout%20and%20SetInterval)/scripts/higher_order_functions.js) | [`timeout_interval.js`](Chapter%2013(Arrow%20functions,%20Higher%20Order%20Function,%20SetTimeout%20and%20SetInterval)/scripts/timeout_interval.js) | [`closure.js`](Chapter%2013(Arrow%20functions,%20Higher%20Order%20Function,%20SetTimeout%20and%20SetInterval)/scripts/closure.js)
+
+⚡ **Arrow Functions:**
+```javascript
+// Traditional function
+function add(a, b) { return a + b; }
+
+// Arrow function
+const add = (a, b) => a + b;
+const square = num => num * num;
+```
+- Concise syntax
+- Implicit returns
+- Lexical `this` binding
+- Use with array methods
+
+**Higher-Order Functions:**
+- Functions that return functions
+- Functions as arguments
+- Functional programming concepts
+- `map()`, `filter()`, `forEach()` applications
+
+**Timing Functions:**
+- `setTimeout()` - Execute after delay
+- `setInterval()` - Execute repeatedly
+- `clearTimeout()` - Cancel timeout
+- `clearInterval()` - Cancel interval
+- Asynchronous execution
+
+**Closures:**
+- Function scope retention
+- Private variables
+- Counter patterns
+
+---
+
+### 📗 Chapter 14: Event Handling, Classes and Constructors
+**Files:** [`event.js`](Chapter%2014(Event%20Handling,%20Classes%20and%20Constructors)/event.js) | [`bubbling.js`](Chapter%2014(Event%20Handling,%20Classes%20and%20Constructors)/bubbling.js) | [`constructor_class.js`](Chapter%2014(Event%20Handling,%20Classes%20and%20Constructors)/constructor_class.js)
+
+🎯 **Event Handling:**
+```javascript
+// Event Handler (old method)
+button.onclick = clickHandler;
+
+// Event Listener (modern method)
+button.addEventListener('click', clickHandler);
+button.removeEventListener('click', clickHandler);
+```
+- Event listeners vs event handlers
+- Multiple event listeners
+- Event bubbling and propagation
+- Removing event listeners
+
+**Classes and Constructors:**
+```javascript
+// Old Constructor Pattern
+function Student(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Modern Class Syntax
+class Employee {
+  constructor(firstName, age) {
+    this.firstName = firstName;
+    this.age = age;
+  }
+  
+  getDepartment() {
+    return this.department;
+  }
+}
+```
+- Constructor functions
+- ES6 class syntax
+- Prototype methods
+- Creating instances with `new`
+- Class methods
+
+---
+
+### 📙 Chapter 15: this Keyword, Inheritance, Static Keyword, and Error Handling
+**Files:** [`this.js`](Chapter%2015(this%20Keyword.%20Inheritance,%20Static%20Keyword,%20and%20Error%20Handling))/this.js) | [`inheritance.js`](Chapter%2015(this%20Keyword.%20Inheritance,%20Static%20Keyword,%20and%20Error%20Handling))/inheritance.js) | [`static.js`](Chapter%2015(this%20Keyword.%20Inheritance,%20Static%20Keyword,%20and%20Error%20Handling))/static.js) | [`handling.js`](Chapter%2015(this%20Keyword.%20Inheritance,%20Static%20Keyword,%20and%20Error%20Handling))/handling.js) | [`throwing.js`](Chapter%2015(this%20Keyword.%20Inheritance,%20Static%20Keyword,%20and%20Error%20Handling))/throwing.js) | [`finally.js`](Chapter%2015(this%20Keyword.%20Inheritance,%20Static%20Keyword,%20and%20Error%20Handling))/finally.js)
+
+🎭 **Advanced OOP Concepts:**
+
+**`this` Keyword:**
+- Context-dependent behavior
+- `this` in event handlers
+- `this` in object methods
+- Dynamic `this` binding
+
+**Inheritance:**
+```javascript
+class Lion extends Cat {
+  constructor(name, color) {
+    super(name);  // Call parent constructor
+    this.color = color;
+  }
+  
+  speak() {
+    console.log(`${this.name} roars.`);
+  }
+}
+```
+- `extends` keyword
+- `super()` for parent constructor
+- Method overriding
+- Inheriting properties and methods
+
+**Error Handling:**
+```javascript
+try {
+  JSON.parse(invalidString);
+} catch (error) {
+  console.log(error.message);
+} finally {
+  console.log('Cleanup code');
+}
+```
+- `try-catch-finally` blocks
+- Error objects
+- Custom error handling
+- Graceful error recovery
+
+---
+
+### 📕 Chapter 16: Callback Hell, Promises, and Fetch API
+**Files:** [`callback_hell.js`](Chapter%2016(Callback%20hell,%20Promise,%20and%20fetch%20api)/scripts/callback_hell.js) | [`promise.js`](Chapter%2016(Callback%20hell,%20Promise,%20and%20fetch%20api)/scripts/promise.js) | [`fetch.js`](Chapter%2016(Callback%20hell,%20Promise,%20and%20fetch%20api)/scripts/fetch.js)
+
+🔄 **Asynchronous JavaScript:**
+
+**Callback Hell:**
+```javascript
+getData((data) => {
+  saveData((id) => {
+    sendResponse(() => {
+      // Nested callbacks - hard to read!
+    });
+  });
+});
+```
+- Nested callbacks problem
+- Pyramid of doom
+- Difficulty in error handling
+
+**Promises:**
+```javascript
+let promise = new Promise((resolve, reject) => {
+  // Async operation
+  resolve('Success!');
+});
+
+promise
+  .then(data => console.log(data))
+  .catch(error => console.log(error))
+  .finally(() => console.log('Done'));
+```
+- Promise creation
+- `resolve` and `reject`
+- `.then()` for success handling
+- `.catch()` for error handling
+- `.finally()` for cleanup
+- Promise chaining
+
+**Fetch API:**
+```javascript
+fetch('https://api.example.com/users')
+  .then(response => {
+    if (!response.ok) throw new Error('Failed');
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+```
+- HTTP requests
+- Response object
+- `.ok` property for status checking
+- `.json()` for parsing
+- Error handling in fetch
+
+---
+
+### 📘 Chapter 17: Async, Await, Modules, Event Loop and Concurrency
+**Files:** [`async.js`](Chapter%2017(Async,%20Await,%20Modules,%20Event%20Loop%20and%20Concurrency)/scripts/async.js) | [`await.js`](Chapter%2017(Async,%20Await,%20Modules,%20Event%20Loop%20and%20Concurrency)/scripts/await.js) | [`math.js`](Chapter%2017(Async,%20Await,%20Modules,%20Event%20Loop%20and%20Concurrency)/scripts/math.js) | [`calculator.js`](Chapter%2017(Async,%20Await,%20Modules,%20Event%20Loop%20and%20Concurrency)/scripts/calculator.js)
+
+⚡ **Modern Async Patterns:**
+
+**Async Functions:**
+```javascript
+async function ola() {
+  return 'Ola Mundo';  // Automatically wrapped in Promise
+}
+
+ola().then(data => console.log(data));
+```
+- `async` keyword
+- Automatic Promise wrapping
+- Cleaner async code
+
+**Await Keyword:**
+```javascript
+async function getUsers() {
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+```
+- `await` pauses execution
+- Synchronous-looking async code
+- Error handling with try-catch
+- Cleaner than promise chains
+
+**ES6 Modules:**
+```javascript
+// math.js - Export
+export function add(a, b) { return a + b; }
+export function subtract(a, b) { return a - b; }
+
+// calculator.js - Import
+import { add, subtract } from './math.js';
+```
+- `export` keyword
+- `import` keyword
+- Named exports
+- Module separation
+- Code organization
+- Reusability
+
+**Event Loop & Concurrency:**
+- Call stack
+- Event queue
+- Asynchronous execution model
+- Non-blocking operations
+
+---
+
 ## 🎯 Practice Questions
 
 ### 🛍️ Question 1: Myntra Shopping Bag Counter
@@ -496,24 +866,57 @@ function addOne() {
 
 ### 🧠 Programming Concepts
 - ✅ Conditionals (if/else/switch)
-- ✅ Loops (while)
+- ✅ Loops (while, for)
 - ✅ Scope & Hoisting
 - ✅ Type coercion
 - ✅ Template literals
 - ✅ Recursion
 - ✅ Call Stack
+- ✅ Closures
+- ✅ Higher-order functions
+- ✅ Event Loop
 
 </td>
 <td width="50%">
 
 ### 🔧 Modern JS Features
-- ✅ ES6 syntax
+- ✅ ES6+ syntax
+- ✅ Arrow functions
+- ✅ Destructuring
+- ✅ Spread/Rest operators
 - ✅ Ternary operators
 - ✅ Nullish coalescing (`??`)
 - ✅ Template strings
+- ✅ Classes & Inheritance
+- ✅ Modules (import/export)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 📦 Data & Storage
+- ✅ Arrays & Array methods
 - ✅ Objects & Methods
+- ✅ JSON (stringify/parse)
+- ✅ Local Storage API
+- ✅ Object comparison
+- ✅ Deep vs Shallow copy
 - ✅ `this` keyword
 - ✅ Reference types
+
+</td>
+<td width="50%">
+
+### ⚡ Asynchronous JS
+- ✅ Callbacks
+- ✅ Callback Hell
+- ✅ Promises
+- ✅ Async/Await
+- ✅ Fetch API
+- ✅ Error Handling (try/catch)
+- ✅ setTimeout/setInterval
+- ✅ Event handling
 
 </td>
 </tr>
@@ -558,9 +961,7 @@ cd "Chapter 1(JS Setup and First Code)"
 
 ```mermaid
 pie title Learning Progress
-    "Completed" : 75
-    "In Progress" : 15
-    "Upcoming" : 10
+    "Completed" : 100
 ```
 
 ### ✅ Completed Chapters
@@ -570,26 +971,38 @@ pie title Learning Progress
 - [x] Chapter 3: Variables and Mini Project
 - [x] Chapter 4: Decision Control
 - [x] Chapter 5: Functions
-- [x] Chapter 6: Loops (While Loop)
+- [x] Chapter 6: Loops
 - [x] Chapter 7: Type Coercion and Memory Management
 - [x] Chapter 8: Objects
+- [x] Chapter 9: Arrays
+- [x] Chapter 10: JSON and Local Storage
+- [x] Chapter 11: DOM Manipulation, Date Object, and Object Comparison
+- [x] Chapter 12: Object Copy, Destructuring, Spread & Rest Operator
+- [x] Chapter 13: Arrow Functions, Higher Order Functions, SetTimeout and SetInterval
+- [x] Chapter 14: Event Handling, Classes and Constructors
+- [x] Chapter 15: this Keyword, Inheritance, Static Keyword, and Error Handling
+- [x] Chapter 16: Callback Hell, Promises, and Fetch API
+- [x] Chapter 17: Async, Await, Modules, Event Loop and Concurrency
 
-### 🔄 In Progress
-- [ ] Advanced Loops (for, do-while, for...of, for...in)
-- [ ] Arrays and Array Methods
-- [ ] Advanced Object Concepts
+### 🎉 Course Status
+**All core JavaScript concepts have been covered!** This repository now contains a comprehensive guide covering everything from JavaScript basics to advanced topics including:
+- ✨ Modern ES6+ features
+- ⚡ Asynchronous programming
+- 🎨 DOM manipulation
+- 📦 Data management
+- 🏗️ Object-oriented programming
+- 🔄 Functional programming
 
-### 📅 Upcoming Topics
-- [ ] ES6+ Features (Arrow Functions, Destructuring, Spread/Rest)
-- [ ] Asynchronous JavaScript (Promises, Async/Await)
-- [ ] DOM Advanced Manipulation
-- [ ] Event Listeners and Event Delegation
-- [ ] Local Storage and Session Storage
-- [ ] Fetch API and AJAX
-- [ ] Error Handling
-- [ ] Modules and Import/Export
-- [ ] Regular Expressions
-- [ ] Data Structures (Maps, Sets)
+### 🔮 Future Updates
+While all fundamental and advanced JavaScript concepts are now covered, this repository may be updated in the future with:
+- 🆕 Emerging JavaScript features and proposals
+- 📚 Additional practice projects and challenges
+- 🛠️ Framework-specific implementations (React, Vue, etc.)
+- 🎓 Advanced design patterns
+- 🔧 Performance optimization techniques
+- 📖 Real-world application examples
+
+**Stay tuned for potential updates as JavaScript continues to evolve!**
 
 ---
 
@@ -638,16 +1051,80 @@ Learning-Js/
 ├── 📁 Chapter 7 (Type_Coercion_and_Memory_Management)/
 │   ├── index.html
 │   ├── script.js
-│   ├── recursion.js
-│   └── Type_coercion_and_Memory_Management.pdf
+│   └── recursion.js
 │
 ├── 📁 Chapter 8 (Objects)/
 │   ├── index.html
 │   ├── object.js
 │   ├── method.js
 │   ├── reference.js
-│   ├── reference_in_function.js
-│   └── Objects.pdf
+│   └── reference_in_function.js
+│
+├── 📁 Chapter 9 (Arrays)/
+│   ├── array.js
+│   └── array_methods.js
+│
+├── 📁 Chapter 10 (JSON and Local Storage)/
+│   ├── index.html
+│   └── scripts/
+│       ├── JSON.js
+│       └── local_storage.js
+│
+├── 📁 Chapter 11 (DOM Manipulation, Date Object, and Object Comparison)/
+│   ├── index.html
+│   ├── index1.html
+│   └── scripts/
+│       ├── DOM_Manipulation.js
+│       ├── Date.js
+│       └── Object_Comparison.js
+│
+├── 📁 Chapter 12 (Object Copy, Destructuring, Spread Rest Operator)/
+│   ├── index.html
+│   └── scripts/
+│       ├── Object_Copy.js
+│       ├── Destructuring_Objects.js
+│       ├── spread.js
+│       ├── rest.js
+│       └── callback.js
+│
+├── 📁 Chapter 13 (Arrow functions, Higher Order Function, SetTimeout and SetInterval)/
+│   ├── index.html
+│   └── scripts/
+│       ├── arrow.js
+│       ├── higher_order_functions.js
+│       ├── timeout_interval.js
+│       └── closure.js
+│
+├── 📁 Chapter 14 (Event Handling, Classes and Constructors)/
+│   ├── event.html
+│   ├── event.js
+│   ├── bubbling.html
+│   ├── bubbling.js
+│   └── constructor_class.js
+│
+├── 📁 Chapter 15 (this Keyword, Inheritance, Static Keyword, and Error Handling)/
+│   ├── this.html
+│   ├── this.js
+│   ├── inheritance.js
+│   ├── static.js
+│   ├── handling.js
+│   ├── throwing.js
+│   └── finally.js
+│
+├── 📁 Chapter 16 (Callback hell, Promise, and fetch api)/
+│   ├── index.html
+│   └── scripts/
+│       ├── callback_hell.js
+│       ├── promise.js
+│       └── fetch.js
+│
+├── 📁 Chapter 17 (Async, Await, Modules, Event Loop and Concurrency)/
+│   ├── index.html
+│   └── scripts/
+│       ├── async.js
+│       ├── await.js
+│       ├── math.js
+│       └── calculator.js
 │
 └── 📁 Practice Question 1/
     ├── index.html
